@@ -138,9 +138,8 @@
 
 .address-selector--expanded .address-selector__dropdown {
   max-height: min(280px, 35vh);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  overflow-y: auto;
-  overflow-x: hidden;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+  overflow: hidden auto;
 }
 
 .address-selector__dropdown-inner {
@@ -247,7 +246,7 @@
 /* ========== Responsive ========== */
 
 /* Mobile (<=480px) */
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .address-selector__selected,
   .address-selector__item {
     padding: var(--spacing-sm) var(--spacing-md);

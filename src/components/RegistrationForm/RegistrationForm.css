@@ -130,7 +130,7 @@
 /* Responzivita */
 
 /* Desktop - fixní šířka 402px */
-@media (min-width: 769px) {
+@media (width >= 769px) {
   .registration-form {
     min-width: 402px;
     max-width: 402px;
@@ -139,7 +139,7 @@
 }
 
 /* Tablet - plná šířka s max-width */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (width >= 481px) and (width <= 768px) {
   .registration-form {
     min-width: auto;
     max-width: 100%;
@@ -148,7 +148,7 @@
 }
 
 /* Mobile - plná šířka, redukované padding */
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .registration-form {
     min-width: auto;
     max-width: 100%;
@@ -170,7 +170,7 @@
 }
 
 /* Extra malé telefony */
-@media (max-width: 360px) {
+@media (width <= 360px) {
   .registration-form {
     padding: var(--spacing-sm);
   }

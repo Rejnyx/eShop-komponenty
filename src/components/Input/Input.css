@@ -97,7 +97,7 @@
 }
 
 /* Responzivita */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .input__field {
     font-size: 16px; /* Prevent zoom on iOS */
   }

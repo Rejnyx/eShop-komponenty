@@ -5,20 +5,29 @@
   "main": "index.js",
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:css:fix": "stylelint \"src/**/*.css\" --fix"
   },
-  "keywords": ["components", "html", "css", "storybook"],
+  "keywords": [
+    "components",
+    "html",
+    "css",
+    "storybook"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "lucide": "^0.298.0"
   },
   "devDependencies": {
-    "@storybook/html": "^8.0.0",
-    "@storybook/html-vite": "^8.0.0",
     "@storybook/addon-essentials": "^8.0.0",
     "@storybook/addon-links": "^8.0.0",
+    "@storybook/html": "^8.0.0",
+    "@storybook/html-vite": "^8.0.0",
     "storybook": "^8.0.0",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1",
     "vite": "^5.0.0"
   }
 }

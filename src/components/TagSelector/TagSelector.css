@@ -191,9 +191,8 @@
 
 .tag-selector--expanded .tag-selector__dropdown {
   max-height: min(280px, 35vh);
-  overflow-y: auto;
-  overflow-x: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden auto;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
   outline-color: var(--color-primary-brand);
   outline-width: var(--border-width-thick);
 }
@@ -306,7 +305,7 @@
 }
 
 /* ========== Responsive ========== */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .tag-selector__container {
     font-size: 16px; /* Prevent zoom on iOS */
   }

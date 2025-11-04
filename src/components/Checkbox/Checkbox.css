@@ -98,7 +98,7 @@
 }
 
 /* Touch targets pro mobile */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .checkbox__box {
     width: 20px;
     height: 20px;

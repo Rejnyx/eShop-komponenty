@@ -6,11 +6,8 @@
 /* ========== Modal Overlay ========== */
 .account-card-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: var(--color-overlay);
   backdrop-filter: var(--backdrop-blur);
   display: flex;
   align-items: center;
@@ -30,9 +27,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  overflow-x: hidden;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+  overflow: hidden auto;
 }
 
 /* ========== Header ========== */
@@ -227,7 +223,7 @@
 .profile-header__edit-button svg {
   width: 14px;
   height: 14px;
-  stroke: currentColor;
+  stroke: currentcolor;
 }
 
 /* ========== Badges Container ========== */
@@ -242,7 +238,7 @@
 .vip-banner {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  place-content: center center;
   gap: 10px;
   padding: var(--spacing-lg);
   background: var(--color-coupon-bg);
@@ -253,7 +249,6 @@
   align-self: stretch;
   overflow: hidden;
   flex-wrap: wrap;
-  align-content: center;
 }
 
 .vip-banner__content {
@@ -403,7 +398,7 @@
 }
 
 .address-item__edit-button svg {
-  stroke: currentColor;
+  stroke: currentcolor;
 }
 
 /* ========== Add Address Button (as AddressItem) ========== */
@@ -525,7 +520,7 @@
 /* ========== Responsive ========== */
 
 /* Desktop - fixní šířka 480px */
-@media (min-width: 769px) {
+@media (width >= 769px) {
   .account-card {
     min-width: 480px;
     max-width: 480px;
@@ -533,7 +528,7 @@
 }
 
 /* Tablet (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (width >= 481px) and (width <= 768px) {
   .account-card {
     max-width: 100%;
   }
@@ -545,7 +540,7 @@
 }
 
 /* Mobile (<=480px) */
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .account-card-overlay {
     padding: 0;
     align-items: flex-end;
@@ -582,7 +577,7 @@
 }
 
 /* Small Mobile (<=360px) */
-@media (max-width: 360px) {
+@media (width <= 360px) {
   .profile-header__avatar {
     width: 60px;
     height: 60px;

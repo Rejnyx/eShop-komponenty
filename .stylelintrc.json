@@ -1,0 +1,40 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "declaration-property-value-disallowed-list": [
+      {
+        "/^(color|background|background-color|border-color|outline-color|fill|stroke)$/": [
+          "/^#/",
+          "/^rgb/",
+          "/^hsl/"
+        ]
+      },
+      {
+        "message": "Nepoužívej hard-coded barvy! Místo toho použij CSS custom properties (var(--color-*)) z tokens.css"
+      }
+    ],
+    "function-disallowed-list": null,
+    "custom-property-pattern": null,
+    "selector-class-pattern": null,
+    "comment-empty-line-before": null,
+    "declaration-empty-line-before": null
+  },
+  "overrides": [
+    {
+      "files": ["**/tokens.css"],
+      "rules": {
+        "declaration-property-value-disallowed-list": null
+      }
+    },
+    {
+      "files": ["**/*.js"],
+      "customSyntax": null
+    }
+  ],
+  "ignoreFiles": [
+    "node_modules/**",
+    "storybook-static/**",
+    "**/*.js",
+    "**/*.md"
+  ]
+}

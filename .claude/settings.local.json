@@ -17,7 +17,11 @@
       "Bash(NUL)",
       "Bash(del nul)",
       "Bash(git commit:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run lint:css:fix:*)"
     ],
     "deny": [],
     "ask": []
