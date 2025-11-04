@@ -1,0 +1,104 @@
+/**
+ * Input Component
+ * Moderní input field s podporou pro ikony, stavy a validaci
+ */
+
+.input {
+  position: relative;
+  width: 100%;
+}
+
+.input__field {
+  width: 100%;
+  height: 48px;
+  padding: var(--spacing-md) var(--spacing-lg);
+
+  background: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  outline: var(--border-width) var(--border-color) solid;
+  outline-offset: calc(var(--border-width) * -1);
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-black);
+
+  transition: outline-color var(--transition-normal);
+}
+
+.input__field::placeholder {
+  color: var(--color-grey-500);
+}
+
+/* Focus State */
+.input__field:focus {
+  outline-color: var(--color-primary-brand);
+  outline-width: var(--border-width-thick);
+}
+
+/* Error State */
+.input--error .input__field {
+  outline-color: var(--color-red);
+}
+
+/* Disabled State */
+.input__field:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--color-grey-100);
+}
+
+/* Input s ikonou napravo */
+.input--with-icon-right .input__field {
+  padding-right: 48px;
+}
+
+/* Icon Container */
+.input__icon {
+  position: absolute;
+  right: var(--spacing-lg);
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  color: var(--color-grey-500);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.input__icon:hover {
+  color: var(--color-black);
+}
+
+.input__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Error Message */
+.input__error-message {
+  display: none;
+  margin-top: var(--spacing-xs);
+
+  font-size: var(--font-size-xs);
+  color: var(--color-red);
+  line-height: var(--line-height-tight);
+}
+
+.input--error .input__error-message {
+  display: block;
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+  .input__field {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "SlashCommand(/bmad:core:workflows:party-mode)",
+      "Bash(npm install:*)",
+      "Bash(npm run storybook:*)",
+      "Bash(cat:*)",
+      "Bash(taskkill:*)",
+      "Bash(nul)",
+      "Bash(pkill:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: eShop komponenty - Design system\n\n✨ Features:\n- 100% design token compliance\n- Fully responsive components (4 breakpoints)\n- Vanilla JS with factory pattern\n- Storybook documentation\n\n📦 Components:\n- Input (with password toggle)\n- Button (primary/secondary)\n- Checkbox\n- Badge (4 types with icons)\n- DatePicker (with calendar icon)\n- TagSelector (multi-select with badges)\n- EditProfileModal (complete form)\n- AccountCard (user profile with addresses)\n- RegistrationForm\n- LoginForm\n- TermsModal\n\n🎨 Design System:\n- Comprehensive design tokens (colors, spacing, typography, icons)\n- Icon tokens (4 sizes, 2 stroke widths)\n- BEM naming convention\n- Lucide icons integration\n\n🖥️ Tech Stack:\n- Vanilla JavaScript\n- CSS Custom Properties\n- Storybook 8.x\n- Lucide icons\n- Vite\n\n🤖 Generated with Claude Code\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(NUL)",
+      "Bash(del nul)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

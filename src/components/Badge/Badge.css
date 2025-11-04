@@ -1,0 +1,170 @@
+/**
+ * Badge Component
+ * Malé štítky/tagy s ikonami a různými barvami
+ * Dva styly: outline (průhledný) a filled (plný)
+ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-badge);
+
+  overflow: hidden;
+
+  cursor: default;
+  user-select: none;
+}
+
+/* Outline style - průhledný s okrajem */
+.badge--outline {
+  outline: 1px solid;
+  outline-offset: -1px;
+  background: transparent;
+}
+
+/* Filled style - plný s barevným pozadím */
+.badge--filled {
+  outline: none;
+}
+
+/* Icon */
+.badge__icon {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badge__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Label */
+.badge__label {
+  font-size: var(--font-size-xxs);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+  word-wrap: break-word;
+}
+
+/* Color Variants */
+
+/* Yellow - Outline */
+.badge--yellow.badge--outline {
+  outline-color: var(--color-yellow);
+}
+
+.badge--yellow.badge--outline .badge__icon svg {
+  color: var(--color-yellow);
+  stroke: var(--color-yellow);
+}
+
+.badge--yellow.badge--outline .badge__label {
+  color: var(--color-yellow);
+}
+
+/* Yellow - Filled */
+.badge--yellow.badge--filled {
+  background: var(--color-yellow);
+}
+
+.badge--yellow.badge--filled .badge__icon svg {
+  color: var(--color-white);
+  stroke: var(--color-white);
+}
+
+.badge--yellow.badge--filled .badge__label {
+  color: var(--color-white);
+}
+
+/* Red - Outline */
+.badge--red.badge--outline {
+  outline-color: var(--color-red);
+}
+
+.badge--red.badge--outline .badge__icon svg {
+  color: var(--color-red);
+  stroke: var(--color-red);
+}
+
+.badge--red.badge--outline .badge__label {
+  color: var(--color-red);
+}
+
+/* Red - Filled */
+.badge--red.badge--filled {
+  background: var(--color-red);
+}
+
+.badge--red.badge--filled .badge__icon svg {
+  color: var(--color-white);
+  stroke: var(--color-white);
+}
+
+.badge--red.badge--filled .badge__label {
+  color: var(--color-white);
+}
+
+/* Green - Outline */
+.badge--green.badge--outline {
+  outline-color: var(--color-green);
+}
+
+.badge--green.badge--outline .badge__icon svg {
+  color: var(--color-green);
+  stroke: var(--color-green);
+}
+
+.badge--green.badge--outline .badge__label {
+  color: var(--color-green);
+}
+
+/* Green - Filled */
+.badge--green.badge--filled {
+  background: var(--color-green);
+}
+
+.badge--green.badge--filled .badge__icon svg {
+  color: var(--color-white);
+  stroke: var(--color-white);
+}
+
+.badge--green.badge--filled .badge__label {
+  color: var(--color-white);
+}
+
+/* Blue - Outline */
+.badge--blue.badge--outline {
+  outline-color: var(--color-blue);
+}
+
+.badge--blue.badge--outline .badge__icon svg {
+  color: var(--color-blue);
+  stroke: var(--color-blue);
+}
+
+.badge--blue.badge--outline .badge__label {
+  color: var(--color-blue);
+}
+
+/* Blue - Filled */
+.badge--blue.badge--filled {
+  background: var(--color-blue);
+}
+
+.badge--blue.badge--filled .badge__icon svg {
+  color: var(--color-white);
+  stroke: var(--color-white);
+}
+
+.badge--blue.badge--filled .badge__label {
+  color: var(--color-white);
+}

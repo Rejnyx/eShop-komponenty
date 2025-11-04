@@ -1,0 +1,192 @@
+/**
+ * Login Form Component
+ * Kompletní přihlašovací formulář - 100% responzivní
+ */
+
+.login-form {
+  width: 100%;
+  max-width: 402px;
+  padding: var(--spacing-xl);
+
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  backdrop-filter: var(--backdrop-blur);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Header sekce */
+.login-form__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 29px;
+}
+
+.login-form__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius-lg);
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+
+  background: none;
+  border: none;
+}
+
+.login-form__close:hover {
+  opacity: 1;
+}
+
+.login-form__close svg {
+  width: 24px;
+  height: 24px;
+}
+
+.login-form__title-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  color: var(--color-black);
+  text-align: center;
+}
+
+/* Fields sekce */
+.login-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Forgot Password Link */
+.login-form__forgot-password {
+  align-self: flex-end;
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-black);
+  text-decoration: underline;
+
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.login-form__forgot-password:hover {
+  color: var(--color-primary-brand);
+}
+
+/* Primary Button */
+.login-form__submit {
+  align-self: stretch;
+}
+
+/* Divider */
+.login-form__divider {
+  text-align: center;
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-black);
+}
+
+/* OAuth Buttons */
+.login-form__oauth {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Footer */
+.login-form__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.login-form__footer-text {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-grey-500);
+}
+
+.login-form__footer-logo {
+  width: auto;
+  height: 20px;
+}
+
+/* Responzivita */
+
+/* Desktop - fixní šířka 402px */
+@media (min-width: 769px) {
+  .login-form {
+    min-width: 402px;
+    max-width: 402px;
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* Tablet - plná šířka s max-width */
+@media (min-width: 481px) and (max-width: 768px) {
+  .login-form {
+    min-width: auto;
+    max-width: 100%;
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Mobile - plná šířka, redukované padding */
+@media (max-width: 480px) {
+  .login-form {
+    min-width: auto;
+    max-width: 100%;
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .login-form__title {
+    font-size: 18px;
+  }
+
+  .login-form__fields {
+    gap: var(--spacing-sm);
+  }
+
+  .login-form__oauth {
+    gap: var(--spacing-sm);
+  }
+}
+
+/* Extra malé telefony */
+@media (max-width: 360px) {
+  .login-form {
+    padding: var(--spacing-sm);
+  }
+
+  .login-form__title {
+    font-size: 16px;
+  }
+}

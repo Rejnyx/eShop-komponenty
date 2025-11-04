@@ -1,0 +1,311 @@
+/**
+ * EditProfileModal Component
+ * Modal okno pro úpravu profilu uživatele - 100% responzivní
+ */
+
+/* ========== Modal Overlay ========== */
+.edit-profile-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: var(--backdrop-blur);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-lg);
+}
+
+/* ========== Modal Container ========== */
+.edit-profile-modal {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ========== Header ========== */
+.edit-profile-modal__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 29px;
+}
+
+.edit-profile-modal__title {
+  font-size: var(--font-size-lg);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  margin: 0;
+}
+
+.edit-profile-modal__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  background: none;
+  border: none;
+}
+
+.edit-profile-modal__close:hover {
+  opacity: 1;
+}
+
+.edit-profile-modal__close svg {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+  stroke-width: var(--icon-stroke);
+}
+
+/* ========== Profile Header ========== */
+.edit-profile-modal__profile-header {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.edit-profile-modal__avatar-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.edit-profile-modal__avatar {
+  width: 91px;
+  height: 91px;
+  border-radius: var(--radius-full);
+  background: var(--color-grey-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.edit-profile-modal__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit-profile-modal__avatar-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.edit-profile-modal__avatar-badge img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.edit-profile-modal__profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.edit-profile-modal__name-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 26px;
+}
+
+.edit-profile-modal__name {
+  font-size: var(--font-size-lg);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  line-height: 26px;
+}
+
+.edit-profile-modal__verified-icon {
+  width: 17px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-green);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.edit-profile-modal__verified-icon svg {
+  width: 11px;
+  height: 11px;
+  stroke: var(--color-white);
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.edit-profile-modal__premium-badge {
+  font-size: var(--font-size-md);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-coupon);
+  line-height: 16px;
+}
+
+
+/* ========== Form Fields ========== */
+.edit-profile-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* ========== Newsletter Checkbox ========== */
+.edit-profile-modal__newsletter {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* ========== Actions ========== */
+.edit-profile-modal__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* ========== Footer ========== */
+.edit-profile-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.edit-profile-modal__footer-text {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family);
+  color: var(--color-grey-500);
+}
+
+.edit-profile-modal__footer-logo {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-brand);
+}
+
+/* ========== Responsive ========== */
+
+/* Desktop - fixní šířka 480px */
+@media (min-width: 769px) {
+  .edit-profile-modal {
+    min-width: 480px;
+    max-width: 480px;
+  }
+}
+
+/* Tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .edit-profile-modal {
+    max-width: 100%;
+  }
+
+  .edit-profile-modal__avatar {
+    width: 72px;
+    height: 72px;
+  }
+
+  .edit-profile-modal__avatar-badge {
+    width: 20px;
+    height: 20px;
+  }
+
+  .edit-profile-modal__avatar-badge img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Mobile (<=480px) */
+@media (max-width: 480px) {
+  .edit-profile-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .edit-profile-modal {
+    max-height: 95vh;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  .edit-profile-modal__profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .edit-profile-modal__name-row {
+    justify-content: center;
+  }
+
+  .edit-profile-modal__badges {
+    justify-content: center;
+  }
+}
+
+/* Small Mobile (<=360px) */
+@media (max-width: 360px) {
+  .edit-profile-modal__avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .edit-profile-modal__avatar-badge {
+    width: 18px;
+    height: 18px;
+  }
+
+  .edit-profile-modal__avatar-badge img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .edit-profile-modal__name {
+    font-size: var(--font-size-md);
+  }
+
+  .edit-profile-modal__title {
+    font-size: var(--font-size-md);
+  }
+}

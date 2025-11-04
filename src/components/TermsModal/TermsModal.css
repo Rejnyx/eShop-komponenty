@@ -1,0 +1,197 @@
+/**
+ * Terms Modal Component
+ * Modální okno s obchodními podmínkami - 100% responzivní
+ */
+
+.terms-modal {
+  width: 100%;
+  max-width: 490px;
+  padding: var(--spacing-xl);
+
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  backdrop-filter: var(--backdrop-blur);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Header sekce */
+.terms-modal__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 29px;
+}
+
+.terms-modal__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius-lg);
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+
+  background: none;
+  border: none;
+}
+
+.terms-modal__close:hover {
+  opacity: 1;
+}
+
+.terms-modal__close svg {
+  width: 24px;
+  height: 24px;
+}
+
+.terms-modal__title-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terms-modal__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  color: var(--color-black);
+  text-align: center;
+}
+
+/* Content sekce - scrollovatelná */
+.terms-modal__content {
+  flex: 1;
+  max-height: 300px;
+  overflow-y: auto;
+
+  padding-right: var(--spacing-sm);
+}
+
+/* Custom scrollbar */
+.terms-modal__content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terms-modal__content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.terms-modal__content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.terms-modal__content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.terms-modal__text {
+  color: var(--color-black);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  word-wrap: break-word;
+}
+
+/* Accept Button */
+.terms-modal__accept {
+  align-self: stretch;
+}
+
+/* Footer */
+.terms-modal__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.terms-modal__footer-text {
+  text-align: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-grey-500);
+}
+
+.terms-modal__footer-logo {
+  width: auto;
+  height: 20px;
+}
+
+/* Responzivita */
+
+/* Desktop - fixní šířka 490px */
+@media (min-width: 769px) {
+  .terms-modal {
+    min-width: 490px;
+    max-width: 490px;
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* Tablet - plná šířka s max-width */
+@media (min-width: 481px) and (max-width: 768px) {
+  .terms-modal {
+    min-width: auto;
+    max-width: 100%;
+    padding: var(--spacing-lg);
+  }
+
+  .terms-modal__content {
+    max-height: 250px;
+  }
+}
+
+/* Mobile - plná šířka, redukované padding */
+@media (max-width: 480px) {
+  .terms-modal {
+    min-width: auto;
+    max-width: 100%;
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .terms-modal__title {
+    font-size: 18px;
+  }
+
+  .terms-modal__content {
+    max-height: 200px;
+  }
+
+  .terms-modal__text {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Extra malé telefony */
+@media (max-width: 360px) {
+  .terms-modal {
+    padding: var(--spacing-sm);
+  }
+
+  .terms-modal__title {
+    font-size: 16px;
+  }
+
+  .terms-modal__content {
+    max-height: 180px;
+  }
+}

@@ -1,0 +1,106 @@
+/**
+ * Checkbox Component
+ * Custom styled checkbox s label a hover states
+ */
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox__input {
+  /* Hide default checkbox */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox__box {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: var(--radius-sm);
+
+  background: var(--color-grey-200);
+  transition: background-color var(--transition-fast);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover State */
+.checkbox:hover .checkbox__box {
+  background: var(--color-grey-300);
+}
+
+/* Checked State */
+.checkbox__input:checked + .checkbox__box {
+  background: var(--color-primary-brand);
+}
+
+/* Hover na checked state */
+.checkbox:hover .checkbox__input:checked + .checkbox__box {
+  background: var(--color-primary-brand);
+}
+
+/* Checkmark (zobrazí se když je checked) */
+.checkbox__checkmark {
+  display: none;
+  width: 12px;
+  height: 12px;
+  color: var(--color-white);
+}
+
+.checkbox__input:checked + .checkbox__box .checkbox__checkmark {
+  display: block;
+}
+
+/* Label */
+.checkbox__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-tight);
+  color: var(--color-black);
+}
+
+.checkbox__label a {
+  color: var(--color-black);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.checkbox__label a:hover {
+  color: var(--color-primary-brand);
+}
+
+/* Disabled State */
+.checkbox--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkbox--disabled .checkbox__box {
+  background: var(--color-grey-100);
+}
+
+/* Focus State (pro a11y) */
+.checkbox__input:focus + .checkbox__box {
+  outline: 2px solid var(--color-primary-brand);
+  outline-offset: 2px;
+}
+
+/* Touch targets pro mobile */
+@media (max-width: 768px) {
+  .checkbox__box {
+    width: 20px;
+    height: 20px;
+  }
+}
