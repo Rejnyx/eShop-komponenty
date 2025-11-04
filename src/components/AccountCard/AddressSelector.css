@@ -8,8 +8,7 @@
   align-self: stretch;
   overflow: visible;
   border-radius: var(--radius-md);
-  outline: 0.5px solid var(--color-grey-500);
-  outline-offset: -0.5px;
+  border: var(--border-width) solid var(--color-grey-500);
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -20,6 +19,7 @@
 
 .address-selector--expanded {
   z-index: 150;
+  border-bottom: none;
 }
 
 /* ========== Selected Address (Header) ========== */
@@ -132,8 +132,8 @@
   backdrop-filter: var(--backdrop-blur);
   border-radius: 0 0 var(--radius-md) var(--radius-md);
   z-index: 102;
-  outline: 0.5px solid var(--color-grey-500);
-  outline-offset: -0.5px;
+  border: var(--border-width) solid var(--color-grey-500);
+  border-top: none;
 }
 
 .address-selector--expanded .address-selector__dropdown {
