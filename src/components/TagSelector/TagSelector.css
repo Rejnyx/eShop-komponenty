@@ -26,10 +26,8 @@
   gap: var(--spacing-sm);
 
   background: var(--color-white);
-  border: none;
+  border: var(--border-width) solid var(--border-color);
   border-radius: var(--radius-md);
-  outline: var(--border-width) var(--border-color) solid;
-  outline-offset: calc(var(--border-width) * -1);
 
   font-family: var(--font-family);
   font-size: var(--font-size-sm);
@@ -37,22 +35,23 @@
   color: var(--color-black);
 
   cursor: pointer;
-  transition: outline-color var(--transition-normal);
+  transition: border-color var(--transition-normal);
   text-align: left;
 }
 
 .tag-selector__container:hover {
-  outline-color: var(--color-grey-500);
+  border-color: var(--color-grey-500);
 }
 
 .tag-selector--expanded .tag-selector__container {
-  outline-color: var(--color-primary-brand);
-  outline-width: var(--border-width-thick);
+  border-color: var(--color-primary-brand);
+  border-width: var(--border-width-thick);
+  border-bottom: none;
   border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 
 .tag-selector__container--error {
-  outline-color: var(--color-red);
+  border-color: var(--color-red);
 }
 
 .tag-selector__container:disabled {
@@ -174,17 +173,17 @@
 /* ========== Dropdown ========== */
 .tag-selector__dropdown {
   position: absolute;
-  top: calc(100% - 1px);
-  left: 0;
-  right: 0;
+  top: 100%;
+  left: -1.5px;
+  right: -1.5px;
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--transition-normal), box-shadow var(--transition-normal);
 
   background: var(--color-white);
   border-radius: 0 0 var(--radius-md) var(--radius-md);
-  outline: var(--border-width) var(--border-color) solid;
-  outline-offset: calc(var(--border-width) * -1);
+  border: var(--border-width) solid var(--border-color);
+  border-top: none;
 
   z-index: 102;
 }
@@ -193,8 +192,9 @@
   max-height: min(280px, 35vh);
   overflow: hidden auto;
   box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
-  outline-color: var(--color-primary-brand);
-  outline-width: var(--border-width-thick);
+  border-color: var(--color-primary-brand);
+  border-width: var(--border-width-thick);
+  border-top: none;
 }
 
 .tag-selector__dropdown-inner {
