@@ -121,9 +121,9 @@
 /* ========== Dropdown ========== */
 .address-selector__dropdown {
   position: absolute;
-  top: calc(100% - 1px);
-  left: 0;
-  right: 0;
+  top: 100%;
+  left: -1px;
+  right: -1px;
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--transition-normal), box-shadow var(--transition-normal);
