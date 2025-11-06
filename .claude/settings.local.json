@@ -21,7 +21,16 @@
       "Bash(git remote add:*)",
       "Bash(git push:*)",
       "Bash(npm run lint:*)",
-      "Bash(npm run lint:css:fix:*)"
+      "Bash(npm run lint:css:fix:*)",
+      "Bash(npm run lint:css:*)",
+      "Bash(npx serve:*)",
+      "Bash(timeout /t 10)",
+      "Bash(npm run validate:icons:*)",
+      "SlashCommand(/bmad:bmm:agents:dev)",
+      "Bash(npm run validate:*)",
+      "Bash(npx stylelint:*)",
+      "Bash(dir:*)",
+      "Bash(xargs:*)"
     ],
     "deny": [],
     "ask": []

@@ -38,8 +38,6 @@ export const createMenuItem = ({
   iconContainer.className = 'menu-item__icon';
   const IconComponent = MENU_ICON_MAP[iconType] || MENU_ICON_MAP.favorites;
   const icon = createElement(IconComponent);
-  icon.setAttribute('width', '20');
-  icon.setAttribute('height', '20');
   iconContainer.appendChild(icon);
 
   // Label
@@ -59,8 +57,6 @@ export const createMenuItem = ({
   const chevron = document.createElement('div');
   chevron.className = 'menu-item__chevron';
   const chevronIcon = createElement(ChevronRight);
-  chevronIcon.setAttribute('width', '16');
-  chevronIcon.setAttribute('height', '16');
   chevron.appendChild(chevronIcon);
 
   // Assemble

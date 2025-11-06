@@ -47,9 +47,6 @@ export const createCheckbox = ({
 
   // Checkmark icon (Lucide)
   const checkmark = createElement(Check);
-  checkmark.setAttribute('width', '12');
-  checkmark.setAttribute('height', '12');
-  checkmark.setAttribute('stroke-width', '2.5');
   checkmark.classList.add('checkbox__checkmark');
   box.appendChild(checkmark);
 

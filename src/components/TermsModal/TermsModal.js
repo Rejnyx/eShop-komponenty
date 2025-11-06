@@ -37,9 +37,6 @@ Strana smlouvy nebo také účastník smlouvy – Cartel pizza FM nebo kupujíc�
   closeButton.className = 'terms-modal__close';
   closeButton.setAttribute('aria-label', 'Zavřít');
   const closeIcon = createElement(X);
-  closeIcon.setAttribute('width', '24');
-  closeIcon.setAttribute('height', '24');
-  closeIcon.setAttribute('stroke-width', '1.5');
   closeButton.appendChild(closeIcon);
   if (onClose) {
     closeButton.addEventListener('click', onClose);

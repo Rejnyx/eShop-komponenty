@@ -73,8 +73,6 @@ export const createAddressItem = ({
   iconContainer.className = 'address-item__icon';
   const IconComponent = ADDRESS_ICON_MAP[iconType] || ADDRESS_ICON_MAP.default;
   const icon = createElement(IconComponent);
-  icon.setAttribute('width', '20');
-  icon.setAttribute('height', '20');
   iconContainer.appendChild(icon);
 
   // Label
@@ -90,8 +88,6 @@ export const createAddressItem = ({
     const chevron = document.createElement('div');
     chevron.className = 'address-item__chevron';
     const chevronIcon = createElement(ChevronDown);
-    chevronIcon.setAttribute('width', '16');
-    chevronIcon.setAttribute('height', '16');
     chevron.appendChild(chevronIcon);
     header.appendChild(chevron);
   }
@@ -114,8 +110,6 @@ export const createAddressItem = ({
     editButton.setAttribute('aria-label', `Upravit adresu ${label}`);
 
     const editIcon = createElement(Pencil);
-    editIcon.setAttribute('width', '14');
-    editIcon.setAttribute('height', '14');
     editButton.appendChild(editIcon);
 
     const editText = document.createElement('span');

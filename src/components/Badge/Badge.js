@@ -45,9 +45,6 @@ export const createBadge = ({
     iconContainer.className = 'badge__icon';
 
     const iconSvg = createElement(ICON_MAP[icon]);
-    iconSvg.setAttribute('width', '14');
-    iconSvg.setAttribute('height', '14');
-    iconSvg.setAttribute('stroke-width', '1.5');
 
     iconContainer.appendChild(iconSvg);
     badge.appendChild(iconContainer);

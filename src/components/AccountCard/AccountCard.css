@@ -171,7 +171,7 @@
   font-family: var(--font-family);
   font-weight: var(--font-weight-bold);
   color: var(--color-black);
-  line-height: 26px;
+  line-height: var(--line-height-normal);
 }
 
 .profile-header__verified-icon {
@@ -198,7 +198,7 @@
   font-family: var(--font-family);
   font-weight: var(--font-weight-bold);
   color: var(--color-coupon);
-  line-height: 16px;
+  line-height: var(--line-height-tight);
 }
 
 .profile-header__edit-button {
@@ -213,7 +213,7 @@
   color: var(--color-grey-500);
   padding: 0;
   transition: color var(--transition-fast);
-  line-height: 16px;
+  line-height: var(--line-height-tight);
 }
 
 .profile-header__edit-button:hover {
@@ -281,7 +281,7 @@
   color: var(--color-coupon);
   font-size: var(--font-size-md);
   font-family: var(--font-family);
-  line-height: 18px;
+  line-height: var(--line-height-tight);
 }
 
 .vip-banner__text-bold {
@@ -375,7 +375,7 @@
   font-size: var(--font-size-sm);
   font-family: var(--font-family);
   color: var(--color-grey-500);
-  line-height: var(--line-height-normal);
+  line-height: var(--line-height-tight);
 }
 
 .address-item__edit-button {

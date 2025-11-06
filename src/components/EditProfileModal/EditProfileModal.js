@@ -6,6 +6,8 @@ import { createCheckbox } from '../Checkbox/Checkbox.js';
 import { createButton } from '../Button/Button.js';
 import { createElement } from 'lucide';
 import X from 'lucide/dist/esm/icons/x';
+import Camera from 'lucide/dist/esm/icons/camera';
+import Check from 'lucide/dist/esm/icons/check';
 
 /**
  * Vytvoří EditProfileModal element
@@ -16,8 +18,6 @@ u
  * @param {string} props.profile.name - Jméno
  * @param {boolean} props.profile.verified - Ověřený účet
  * @param {boolean} props.profile.premium - Premium účet
- * @param {Array<string>} props.profile.badges - Pole badge typů ['favorite', 'favorite']
- * @param {Object} props.profile.vip - VIP data
  * @param {Object} props.formData - Formulářová data
  * @param {string} props.formData.firstName - Jméno
  * @param {string} props.formData.lastName - Příjmení
@@ -36,11 +36,6 @@ export const createEditProfileModal = ({
     name: 'Adam Zdravý',
     verified: true,
     premium: true,
-    badges: ['favorite', 'favorite'],
-    vip: {
-      cashback: '15%',
-      points: '+10 b.',
-    },
   },
   formData = {
     firstName: '',
@@ -111,8 +106,7 @@ export const createEditProfileModal = ({
   const avatarBadge = document.createElement('button');
   avatarBadge.className = 'edit-profile-modal__avatar-badge';
   avatarBadge.type = 'button';
-  // Placeholder camera icon
-  avatarBadge.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>';
+  avatarBadge.appendChild(createElement(Camera));
 
   avatarContainer.appendChild(avatar);
   avatarContainer.appendChild(avatarBadge);
@@ -133,7 +127,7 @@ export const createEditProfileModal = ({
   if (profile.verified) {
     const verifiedIcon = document.createElement('div');
     verifiedIcon.className = 'edit-profile-modal__verified-icon';
-    verifiedIcon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"/></svg>';
+    verifiedIcon.appendChild(createElement(Check));
     nameRow.appendChild(verifiedIcon);
   }
 

@@ -31,11 +31,6 @@ export const Default = {
       name: 'Adam Zdravý',
       verified: true,
       premium: true,
-      badges: ['favorite', 'favorite'],
-      vip: {
-        cashback: '15%',
-        points: '+10 b.',
-      },
     },
     formData: {
       firstName: 'Adam',
@@ -71,11 +66,6 @@ export const EmptyForm = {
       name: 'Adam Zdravý',
       verified: true,
       premium: true,
-      badges: ['favorite'],
-      vip: {
-        cashback: '15%',
-        points: '+10 b.',
-      },
     },
     formData: {
       firstName: '',
@@ -111,8 +101,6 @@ export const WithoutPremium = {
       name: 'Jana Nováková',
       verified: false,
       premium: false,
-      badges: [],
-      vip: null,
     },
     formData: {
       firstName: 'Jana',
@@ -148,11 +136,6 @@ export const AllTags = {
       name: 'Petr Svoboda',
       verified: true,
       premium: true,
-      badges: ['favorite', 'favorite'],
-      vip: {
-        cashback: '20%',
-        points: '+15 b.',
-      },
     },
     formData: {
       firstName: 'Petr',
@@ -188,11 +171,6 @@ export const MobilePreview = {
       name: 'Lucie Malá',
       verified: true,
       premium: true,
-      badges: ['favorite'],
-      vip: {
-        cashback: '15%',
-        points: '+10 b.',
-      },
     },
     formData: {
       firstName: 'Lucie',
@@ -233,8 +211,6 @@ export const TabletPreview = {
       name: 'Martin Dvořák',
       verified: true,
       premium: false,
-      badges: [],
-      vip: null,
     },
     formData: {
       firstName: 'Martin',

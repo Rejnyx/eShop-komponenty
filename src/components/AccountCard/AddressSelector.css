@@ -84,7 +84,7 @@
   font-size: var(--font-size-sm);
   font-family: var(--font-family);
   font-weight: var(--font-weight-regular);
-  line-height: 16px;
+  line-height: var(--line-height-tight);
 }
 
 .address-selector__address {
@@ -93,7 +93,7 @@
   font-size: var(--font-size-xs);
   font-family: var(--font-family);
   font-weight: var(--font-weight-regular);
-  line-height: 16px;
+  line-height: var(--line-height-tight);
   letter-spacing: 0.24px;
 }
 

@@ -3,6 +3,8 @@ import { createElement } from 'lucide';
 import ChevronDown from 'lucide/dist/esm/icons/chevron-down';
 import X from 'lucide/dist/esm/icons/x';
 import Leaf from 'lucide/dist/esm/icons/leaf';
+import Star from 'lucide/dist/esm/icons/star';
+import Check from 'lucide/dist/esm/icons/check';
 
 /**
  * Tag types s barvami a ikonami
@@ -11,22 +13,22 @@ const TAG_TYPES = {
   vegetarian: {
     label: 'Vegetarián',
     color: 'green',
-    icon: 'leaf',
+    icon: Leaf,
   },
   vegan: {
     label: 'Veganské',
     color: 'green',
-    icon: 'leaf',
+    icon: Leaf,
   },
   glutenFree: {
     label: 'Bezlepkové',
     color: 'blue',
-    icon: 'leaf',
+    icon: Leaf,
   },
   favorite: {
     label: 'Oblíbené',
     color: 'yellow',
-    icon: 'star',
+    icon: Star,
   },
 };
 
@@ -95,7 +97,7 @@ export const createTagSelector = ({
         // Icon
         const iconSpan = document.createElement('span');
         iconSpan.className = 'tag-selector__tag-icon';
-        iconSpan.innerHTML = getTagIcon(tagType.icon);
+        iconSpan.appendChild(createElement(tagType.icon));
         tagBadge.appendChild(iconSpan);
 
         // Label
@@ -154,7 +156,7 @@ export const createTagSelector = ({
     // Icon
     const iconSpan = document.createElement('span');
     iconSpan.className = `tag-selector__item-icon tag-selector__item-icon--${tagType.color}`;
-    iconSpan.innerHTML = getTagIcon(tagType.icon);
+    iconSpan.appendChild(createElement(tagType.icon));
     item.appendChild(iconSpan);
 
     // Label
@@ -164,8 +166,8 @@ export const createTagSelector = ({
     item.appendChild(label);
 
     // Checkmark
-    const checkmark = document.createElement('span');
-    checkmark.className = 'tag-selector__item-checkmark';
+    const checkmark = createElement(Check);
+    checkmark.setAttribute('class', 'tag-selector__item-checkmark');
     item.appendChild(checkmark);
 
     // Update checked state
@@ -233,17 +235,5 @@ export const createTagSelector = ({
 
   return wrapper;
 };
-
-/**
- * Helper pro ikony štítků
- */
-function getTagIcon(iconName) {
-  const icons = {
-    leaf: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>',
-    star: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
-  };
-
-  return icons[iconName] || icons.leaf;
-}
 
 export { TAG_TYPES };

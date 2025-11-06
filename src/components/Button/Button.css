@@ -1,24 +1,25 @@
 /**
  * Button Component
  * Moderní, přístupné tlačítko s různými variantami
+ * DŮLEŽITÉ: Vždy používat createButton() z Button.js místo vytváření vlastních tlačítek!
  */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-sm);
+  gap: var(--button-gap);
 
-  height: 48px;
-  padding: 0 var(--spacing-lg);
-  border-radius: var(--radius-lg);
+  height: var(--button-height);
+  padding: 0 var(--button-padding-horizontal);
+  border-radius: var(--button-border-radius);
 
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   line-height: var(--line-height-tight);
   text-decoration: none;
 
-  transition: background-color 0.2s ease, outline-color 0.2s ease;
+  transition: background-color var(--transition-normal), outline-color var(--transition-normal);
   cursor: pointer;
   border: none;
 }
@@ -49,8 +50,6 @@
   outline-color: var(--color-grey-600);
 }
 
-/* Large Size - již není potřeba, všechny buttony mají 48px */
-
 /* Disabled State */
 .btn:disabled {
   opacity: 0.5;
@@ -62,9 +61,22 @@
   width: 100%;
 }
 
-/* Icon Support */
+/* Icon Support - Lucide SVG ikony */
 .btn__icon {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.btn__icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: var(--icon-stroke);
+}
+
+.btn__label {
+  /* Label je flex item, lze stylovat podle potřeby */
 }

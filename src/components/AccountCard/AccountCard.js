@@ -37,6 +37,7 @@ export const createAccountCard = ({
   addresses = [],
   menuItems = [],
   onClose = () => {},
+  onEdit = () => {},
 } = {}) => {
   // Modal Overlay
   const overlay = document.createElement('div');
@@ -64,8 +65,6 @@ export const createAccountCard = ({
   closeButton.type = 'button';
   closeButton.setAttribute('aria-label', 'Zavřít');
   const closeIcon = createElement(X);
-  closeIcon.setAttribute('width', '24');
-  closeIcon.setAttribute('height', '24');
   closeButton.appendChild(closeIcon);
   closeButton.addEventListener('click', onClose);
 
@@ -85,7 +84,7 @@ export const createAccountCard = ({
     name: user.name,
     isVerified: user.isVerified,
     isPremium: user.isPremium,
-    onEdit: () => console.log('Edit profile clicked'),
+    onEdit: onEdit,
   });
   profileSection.appendChild(profileHeader);
 

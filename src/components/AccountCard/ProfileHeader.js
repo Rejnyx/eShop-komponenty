@@ -117,8 +117,6 @@ export const createProfileHeader = ({
   editText.textContent = 'Upravit údaje';
 
   const editIcon = createElement(Pencil);
-  editIcon.setAttribute('width', '14');
-  editIcon.setAttribute('height', '14');
 
   editButton.appendChild(editText);
   editButton.appendChild(editIcon);

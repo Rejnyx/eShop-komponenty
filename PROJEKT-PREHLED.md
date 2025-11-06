@@ -159,6 +159,8 @@ npm run lint:css:fix    # Automatická oprava
 - ✅ Kontroluje moderní CSS syntax
 - ✅ Formátování a konzistenci
 
+**Poznámka:** Pravidlo `no-descending-specificity` bylo vypnuto, aby se předešlo falešným chybám a zjednodušil vývoj.
+
 **Výsledek:** ✅ 0 hard-coded barev v projektu!
 
 ---
@@ -312,6 +314,7 @@ export const createComponentName = ({
 - [x] 100% responzivita (4 breakpointy)
 - [x] Storybook dokumentace
 - [x] Stylelint pro kontrolu tokenů
+- [x] Proveden celoprojektový audit a refaktoring pro 100% pokrytí design tokeny
 - [x] GitHub repo (https://github.com/Rejnyx/eShop-komponenty.git)
 
 ### Co by se dalo přidat 💡

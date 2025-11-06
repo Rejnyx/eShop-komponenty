@@ -148,44 +148,53 @@
     import { createAccountCard } from './src/components/AccountCard/AccountCard.js';
     import { createEditProfileModal } from './src/components/EditProfileModal/EditProfileModal.js';
 
-    // Sample data
-    const profileData = {
+    // --- Sample Data ---
+
+    // Data pro AccountCard
+    const userData = {
+      name: 'Adam Zdravý',
+      avatarUrl: 'https://i.pravatar.cc/150?img=12',
+      isVerified: true,
+      isPremium: true,
+    };
+
+    const badgesData = [
+      { label: 'Oblíbené', variant: 'yellow', icon: 'star' },
+      { label: 'Top 10%', variant: 'green', icon: 'check-circle' },
+    ];
+
+    const vipBannerData = {
+      text: 'VIP cashback|15% sleva|+10 b.',
+    };
+
+    const addressesData = [
+      {
+        label: 'Domov',
+        address: 'Křižíkova 1234/56, 186 00 Praha 8',
+        iconType: 'home',
+      },
+      {
+        label: 'Práce',
+        address: 'Na Příkopě 12, 110 00 Praha 1',
+        iconType: 'work',
+      },
+    ];
+
+    const menuItemsData = [
+      { label: 'Oblíbené položky', iconType: 'favorites', count: 8 },
+      { label: 'Historie objednávek', iconType: 'history', count: 24 },
+      { label: 'Moje kupóny', iconType: 'coupons', count: 3 },
+    ];
+
+    // Data pro EditProfileModal
+    const profileDataForEditModal = {
       avatar: 'https://i.pravatar.cc/150?img=12',
       name: 'Adam Zdravý',
       verified: true,
       premium: true,
-      badges: ['favorite', 'vip'],
-      vip: {
-        cashback: '15% sleva',
-        points: '+10 b.',
-      },
     };
 
-    const addresses = [
-      {
-        id: '1',
-        type: 'home',
-        label: 'Domov',
-        address: 'Křižíkova 1234/56, 186 00 Praha 8',
-        isDefault: true,
-      },
-      {
-        id: '2',
-        type: 'work',
-        label: 'Práce',
-        address: 'Na Příkopě 12, 110 00 Praha 1',
-        isDefault: false,
-      },
-      {
-        id: '3',
-        type: 'school',
-        label: 'Škola',
-        address: 'Karlovo náměstí 13, 120 00 Praha 2',
-        isDefault: false,
-      },
-    ];
-
-    const formData = {
+    const formDataForEditModal = {
       firstName: 'Adam',
       lastName: 'Zdravý',
       birthDate: '1990-05-15',
@@ -195,71 +204,62 @@
       newsletter: true,
     };
 
+
+    // --- Modal Management ---
+
     let currentAccountCard = null;
     let currentEditModal = null;
 
-    // Open AccountCard
-    document.getElementById('openAccountCard').addEventListener('click', () => {
-      // Close existing if any
-      if (currentAccountCard) {
-        currentAccountCard.remove();
-      }
+    function openAccountCard() {
+      if (currentAccountCard) currentAccountCard.remove();
+      if (currentEditModal) currentEditModal.remove();
 
       currentAccountCard = createAccountCard({
-        profile: profileData,
-        addresses: addresses,
+        user: userData,
+        badges: badgesData,
+        vipBanner: vipBannerData,
+        addresses: addressesData,
+        menuItems: menuItemsData,
         onClose: () => {
-          currentAccountCard.remove();
-          currentAccountCard = null;
+          if (currentAccountCard) {
+            currentAccountCard.remove();
+            currentAccountCard = null;
+          }
         },
-        onAddressChange: (addressId) => {
-          console.log('Selected address:', addressId);
-        },
-        onEditProfile: () => {
-          console.log('Opening edit profile modal...');
+        onEdit: () => {
+          console.log('onEdit triggered from AccountCard');
+          if (currentAccountCard) {
+            currentAccountCard.remove();
+            currentAccountCard = null;
+          }
           openEditProfileModal();
-        },
-        onAddAddress: () => {
-          console.log('Add new address');
-          alert('Funkce "Přidat novou adresu" - zatím v demoverzi');
-        },
-        onMenuClick: (menuId) => {
-          console.log('Menu clicked:', menuId);
-          alert(`Kliknuto na menu: ${menuId}`);
         },
       });
 
-      // Add right modal class
       currentAccountCard.classList.add('account-card-overlay--right');
-
       document.body.appendChild(currentAccountCard);
-    });
+    }
 
-    // Open EditProfileModal
     function openEditProfileModal() {
-      // Close existing if any
-      if (currentEditModal) {
-        currentEditModal.remove();
-      }
+      if (currentEditModal) currentEditModal.remove();
+      if (currentAccountCard) currentAccountCard.remove(); // Just in case
 
       currentEditModal = createEditProfileModal({
-        profile: profileData,
-        formData: formData,
+        profile: profileDataForEditModal,
+        formData: formDataForEditModal,
         onClose: () => {
-          currentEditModal.remove();
-          currentEditModal = null;
+          if (currentEditModal) {
+            currentEditModal.remove();
+            currentEditModal = null;
+          }
         },
         onSave: (updatedFormData) => {
           console.log('Saving form data:', updatedFormData);
-
-          // Update formData
-          Object.assign(formData, updatedFormData);
-
-          // Close modal
-          currentEditModal.remove();
-          currentEditModal = null;
-
-          // Show success message
+          Object.assign(formDataForEditModal, updatedFormData);
+          if (currentEditModal) {
+            currentEditModal.remove();
+            currentEditModal = null;
+          }
           alert('Profil byl úspěšně uložen! ✅');
         },
       });
@@ -267,7 +267,11 @@
       document.body.appendChild(currentEditModal);
     }
 
-    // ESC key closes modals
+
+    // --- Event Listeners ---
+
+    document.getElementById('openAccountCard').addEventListener('click', openAccountCard);
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         if (currentEditModal) {

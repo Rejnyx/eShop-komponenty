@@ -103,7 +103,13 @@
 .registration-form__oauth {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--spacing-sm);
+}
+
+.registration-form__oauth-icon {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+  object-fit: contain;
 }
 
 /* Footer */
@@ -111,7 +117,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: var(--spacing-xs);
 }
 
 .registration-form__footer-text {
@@ -157,7 +163,7 @@
   }
 
   .registration-form__title {
-    font-size: 18px;
+    font-size: var(--font-size-lg);
   }
 
   .registration-form__fields {
@@ -176,6 +182,6 @@
   }
 
   .registration-form__title {
-    font-size: 16px;
+    font-size: var(--font-size-md);
   }
 }

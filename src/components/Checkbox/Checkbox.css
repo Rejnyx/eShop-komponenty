@@ -37,6 +37,23 @@
 }
 
 /* Hover State */
+/* Disabled State */
+.checkbox--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkbox--disabled .checkbox__box {
+  background: var(--color-grey-100);
+}
+
+/* Focus State (pro a11y) */
+.checkbox__input:focus + .checkbox__box {
+  outline: 2px solid var(--color-primary-brand);
+  outline-offset: 2px;
+}
+
+/* Hover State */
 .checkbox:hover .checkbox__box {
   background: var(--color-grey-300);
 }
@@ -79,22 +96,6 @@
 
 .checkbox__label a:hover {
   color: var(--color-primary-brand);
-}
-
-/* Disabled State */
-.checkbox--disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.checkbox--disabled .checkbox__box {
-  background: var(--color-grey-100);
-}
-
-/* Focus State (pro a11y) */
-.checkbox__input:focus + .checkbox__box {
-  outline: 2px solid var(--color-primary-brand);
-  outline-offset: 2px;
 }
 
 /* Touch targets pro mobile */

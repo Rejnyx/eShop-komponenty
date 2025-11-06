@@ -83,17 +83,17 @@
 
 /* Custom scrollbar */
 .terms-modal__content::-webkit-scrollbar {
-  width: 6px;
+  width: var(--spacing-xs);
 }
 
 .terms-modal__content::-webkit-scrollbar-track {
   background: var(--color-scrollbar-track);
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
 }
 
 .terms-modal__content::-webkit-scrollbar-thumb {
   background: var(--color-scrollbar-thumb);
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
 }
 
 .terms-modal__content::-webkit-scrollbar-thumb:hover {
@@ -118,7 +118,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: var(--spacing-xs);
 }
 
 .terms-modal__footer-text {
@@ -169,7 +169,7 @@
   }
 
   .terms-modal__title {
-    font-size: 18px;
+    font-size: var(--font-size-lg);
   }
 
   .terms-modal__content {
@@ -188,7 +188,7 @@
   }
 
   .terms-modal__title {
-    font-size: 16px;
+    font-size: var(--font-size-md);
   }
 
   .terms-modal__content {

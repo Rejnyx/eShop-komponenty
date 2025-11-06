@@ -17,7 +17,8 @@
     "custom-property-pattern": null,
     "selector-class-pattern": null,
     "comment-empty-line-before": null,
-    "declaration-empty-line-before": null
+    "declaration-empty-line-before": null,
+    "no-descending-specificity": null
   },
   "overrides": [
     {

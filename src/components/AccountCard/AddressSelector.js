@@ -72,8 +72,6 @@ export const createAddressSelector = ({
   selectedIconContainer.className = 'address-selector__icon';
   const SelectedIconComponent = ADDRESS_ICON_MAP[selectedAddress.iconType] || ADDRESS_ICON_MAP.default;
   const selectedIcon = createElement(SelectedIconComponent);
-  selectedIcon.setAttribute('width', '24');
-  selectedIcon.setAttribute('height', '24');
   selectedIconContainer.appendChild(selectedIcon);
 
   // Text content
@@ -95,8 +93,6 @@ export const createAddressSelector = ({
   const chevronContainer = document.createElement('div');
   chevronContainer.className = 'address-selector__chevron';
   const chevronIcon = createElement(ChevronDown);
-  chevronIcon.setAttribute('width', '24');
-  chevronIcon.setAttribute('height', '24');
   chevronContainer.appendChild(chevronIcon);
 
   selectedHeader.appendChild(selectedIconContainer);
@@ -130,8 +126,6 @@ export const createAddressSelector = ({
     itemIconContainer.className = 'address-selector__icon';
     const ItemIconComponent = ADDRESS_ICON_MAP[addr.iconType] || ADDRESS_ICON_MAP.default;
     const itemIcon = createElement(ItemIconComponent);
-    itemIcon.setAttribute('width', '24');
-    itemIcon.setAttribute('height', '24');
     itemIconContainer.appendChild(itemIcon);
 
     // Text content
@@ -153,8 +147,6 @@ export const createAddressSelector = ({
     const editIconContainer = document.createElement('div');
     editIconContainer.className = 'address-selector__edit';
     const editIcon = createElement(Copy);
-    editIcon.setAttribute('width', '24');
-    editIcon.setAttribute('height', '24');
     editIconContainer.appendChild(editIcon);
 
     editIconContainer.addEventListener('click', (e) => {
@@ -175,8 +167,6 @@ export const createAddressSelector = ({
   addButton.type = 'button';
 
   const plusIcon = createElement(Plus);
-  plusIcon.setAttribute('width', '24');
-  plusIcon.setAttribute('height', '24');
   addButton.appendChild(plusIcon);
 
   const addButtonText = document.createElement('span');

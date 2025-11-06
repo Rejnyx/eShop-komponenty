@@ -1,4 +1,8 @@
 import { createButton } from './Button.js';
+import ChevronRight from 'lucide/dist/esm/icons/chevron-right';
+import ChevronLeft from 'lucide/dist/esm/icons/chevron-left';
+import Search from 'lucide/dist/esm/icons/search';
+import ShoppingCart from 'lucide/dist/esm/icons/shopping-cart';
 
 // Import design tokens a reset
 import '../../tokens/tokens.css';
@@ -13,12 +17,12 @@ export default {
       control: { type: 'select' },
       options: ['primary', 'secondary'],
     },
-    size: {
-      control: { type: 'select' },
-      options: ['default', 'large'],
-    },
     fullWidth: { control: 'boolean' },
     disabled: { control: 'boolean' },
+    iconPosition: {
+      control: { type: 'select' },
+      options: ['left', 'right'],
+    },
     onClick: { action: 'clicked' },
   },
 };
@@ -28,7 +32,6 @@ export const Primary = {
   args: {
     label: 'Registrovat se',
     variant: 'primary',
-    size: 'default',
   },
   render: (args) => createButton(args),
 };
@@ -38,29 +41,60 @@ export const Secondary = {
   args: {
     label: 'Zrušit',
     variant: 'secondary',
-    size: 'default',
   },
   render: (args) => createButton(args),
 };
 
-// Large Primary
-export const LargePrimary = {
+// Button s ikonou vlevo
+export const WithIconLeft = {
   args: {
-    label: 'Přihlásit se pomocí Googlu',
+    label: 'Hledat',
     variant: 'primary',
-    size: 'large',
   },
-  render: (args) => createButton(args),
+  render: (args) => createButton({
+    ...args,
+    icon: Search,
+    iconPosition: 'left',
+  }),
 };
 
-// Large Secondary (OAuth buttons)
-export const LargeSecondary = {
+// Button s ikonou vpravo
+export const WithIconRight = {
   args: {
-    label: 'Přihlásit se pomocí Apple',
-    variant: 'secondary',
-    size: 'large',
+    label: 'Pokračovat',
+    variant: 'primary',
   },
-  render: (args) => createButton(args),
+  render: (args) => createButton({
+    ...args,
+    icon: ChevronRight,
+    iconPosition: 'right',
+  }),
+};
+
+// Secondary s ikonou
+export const SecondaryWithIcon = {
+  args: {
+    label: 'Zpět',
+    variant: 'secondary',
+  },
+  render: (args) => createButton({
+    ...args,
+    icon: ChevronLeft,
+    iconPosition: 'left',
+  }),
+};
+
+// Shopping cart button
+export const ShoppingCartButton = {
+  args: {
+    label: 'Do košíku',
+    variant: 'primary',
+  },
+  render: (args) => createButton({
+    ...args,
+    icon: ShoppingCart,
+    iconPosition: 'left',
+  }),
 };
 
 // Full Width

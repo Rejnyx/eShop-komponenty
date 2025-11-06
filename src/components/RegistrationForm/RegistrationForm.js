@@ -33,9 +33,6 @@ export const createRegistrationForm = ({
   closeButton.className = 'registration-form__close';
   closeButton.setAttribute('aria-label', 'Zavřít');
   const closeIcon = createElement(X);
-  closeIcon.setAttribute('width', '24');
-  closeIcon.setAttribute('height', '24');
-  closeIcon.setAttribute('stroke-width', '1.5');
   closeButton.appendChild(closeIcon);
   if (onClose) {
     closeButton.addEventListener('click', onClose);
@@ -108,23 +105,47 @@ export const createRegistrationForm = ({
   const oauth = document.createElement('div');
   oauth.className = 'registration-form__oauth';
 
-  const googleButton = createButton({
-    label: 'Přihlásit se pomocí Googlu',
-    variant: 'secondary',
-    size: 'large',
-    fullWidth: true,
-    icon: '../../../pics/Google_G_Icon.svg',
-    onClick: onGoogleLogin,
-  });
+  // Google button - vlastní implementace pro OAuth s ikonou
+  const googleButton = document.createElement('button');
+  googleButton.className = 'btn btn--secondary btn--full-width registration-form__oauth-button';
+  googleButton.type = 'button';
 
-  const appleButton = createButton({
-    label: 'Přihlásit se pomocí Apple',
-    variant: 'secondary',
-    size: 'large',
-    fullWidth: true,
-    icon: '../../../pics/Apple.svg',
-    onClick: onAppleLogin,
-  });
+  const googleIcon = document.createElement('img');
+  googleIcon.src = '../../../pics/Google_G_Icon.svg';
+  googleIcon.alt = '';
+  googleIcon.className = 'registration-form__oauth-icon';
+
+  const googleLabel = document.createElement('span');
+  googleLabel.className = 'btn__label';
+  googleLabel.textContent = 'Přihlásit se pomocí Googlu';
+
+  googleButton.appendChild(googleIcon);
+  googleButton.appendChild(googleLabel);
+
+  if (onGoogleLogin) {
+    googleButton.addEventListener('click', onGoogleLogin);
+  }
+
+  // Apple button - vlastní implementace pro OAuth s ikonou
+  const appleButton = document.createElement('button');
+  appleButton.className = 'btn btn--secondary btn--full-width registration-form__oauth-button';
+  appleButton.type = 'button';
+
+  const appleIcon = document.createElement('img');
+  appleIcon.src = '../../../pics/Apple.svg';
+  appleIcon.alt = '';
+  appleIcon.className = 'registration-form__oauth-icon';
+
+  const appleLabel = document.createElement('span');
+  appleLabel.className = 'btn__label';
+  appleLabel.textContent = 'Přihlásit se pomocí Apple';
+
+  appleButton.appendChild(appleIcon);
+  appleButton.appendChild(appleLabel);
+
+  if (onAppleLogin) {
+    appleButton.addEventListener('click', onAppleLogin);
+  }
 
   oauth.appendChild(googleButton);
   oauth.appendChild(appleButton);

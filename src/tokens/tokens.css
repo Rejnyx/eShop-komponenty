@@ -80,6 +80,14 @@
   --icon-stroke: 1.5;
   --icon-stroke-bold: 2.5;
 
+  /* Button */
+  --button-height: 48px;
+  --button-padding-horizontal: 32px;
+  --button-font-size: var(--font-size-md);
+  --button-font-weight: var(--font-weight-bold);
+  --button-border-radius: var(--radius-full);
+  --button-gap: 10px; /* Gap mezi ikonou a textem */
+
   /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.2s ease;

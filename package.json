@@ -8,7 +8,9 @@
     "build-storybook": "storybook build",
     "demo": "npx serve -p 3000",
     "lint:css": "stylelint \"src/**/*.css\"",
-    "lint:css:fix": "stylelint \"src/**/*.css\" --fix"
+    "lint:css:fix": "stylelint \"src/**/*.css\" --fix",
+    "validate:icons": "node scripts/validate-icons.js",
+    "validate": "npm run lint:css && npm run validate:icons"
   },
   "keywords": [
     "components",

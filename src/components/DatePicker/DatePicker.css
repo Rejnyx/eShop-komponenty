@@ -15,9 +15,9 @@
 
 .date-picker__field {
   width: 100%;
-  height: 48px;
+  height: var(--button-height);
   padding: var(--spacing-md) var(--spacing-lg);
-  padding-right: 48px; /* Místo pro ikonu */
+  padding-right: calc(var(--spacing-lg) * 3); /* Místo pro ikonu */
 
   background: var(--color-white);
   border: none;
@@ -124,6 +124,6 @@
 /* Responsive */
 @media (width <= 768px) {
   .date-picker__field {
-    font-size: 16px; /* Prevent zoom on iOS */
+    font-size: var(--font-size-md); /* Prevent zoom on iOS */
   }
 }

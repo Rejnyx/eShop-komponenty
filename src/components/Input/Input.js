@@ -60,9 +60,6 @@ export const createInput = ({
 
     let isPasswordVisible = false;
     const eyeIcon = createElement(Eye);
-    eyeIcon.setAttribute('width', '24');
-    eyeIcon.setAttribute('height', '24');
-    eyeIcon.setAttribute('stroke-width', '1.5');
     iconContainer.appendChild(eyeIcon);
 
     iconContainer.addEventListener('click', () => {
